@@ -1,12 +1,12 @@
 package com.github.hotire.spring.cqrs.ex
 
-class User {
-    val userid: String? = null
-    val firstName: String? = null
-    val lastName: String? = null
-    val contacts: Set<Contact>? = null
-    val addresses: Set<Address>? = null
-}
+class User(
+    val userId: String,
+    val firstName: String,
+    val lastName: String,
+    val contacts: Set<Contact>,
+    val addresses: Set<Address>
+)
 
 class Contact(
     val type: String,
