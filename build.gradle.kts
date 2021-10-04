@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.5.31"
     kotlin("plugin.spring") version "1.5.31"
     kotlin("plugin.jpa") version "1.5.31"
+    kotlin("kapt") version "1.5.31"
 }
 
 group = "com.github.hotire"
@@ -17,6 +18,7 @@ repositories {
 }
 
 extra["springCloudVersion"] = "2020.0.4"
+val mapstructVersion = "1.4.2.Final"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -27,6 +29,10 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    implementation("org.mapstruct:mapstruct:$mapstructVersion")
+    kapt("org.mapstruct:mapstruct-processor:$mapstructVersion")
+    kaptTest("org.mapstruct:mapstruct-processor:$mapstructVersion")
 }
 
 dependencyManagement {
