@@ -23,3 +23,13 @@ interface ContactMapper {
     fun toDomain(entity: ContactEntity): Contact
     fun toJpaEntity(domain: Contact): ContactEntity
 }
+
+@Mapper
+interface AddressMapper {
+    companion object {
+        val INSTANCE: ContactMapper = Mappers.getMapper(ContactMapper::class.java)
+    }
+
+    fun toDomain(entity: AddressEntity): Address
+    fun toJpaEntity(domain: Address): AddressEntity
+}
