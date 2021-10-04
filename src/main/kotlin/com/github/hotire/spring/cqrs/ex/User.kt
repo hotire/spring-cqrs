@@ -1,6 +1,6 @@
 package com.github.hotire.spring.cqrs.ex
 
-class User(
+data class User(
     val userId: String,
     val firstName: String,
     val lastName: String,
@@ -8,12 +8,12 @@ class User(
     val addresses: Set<Address>
 )
 
-class Contact(
+data class Contact(
     val type: String,
     val detail: String
 )
 
-class Address(
+data class Address(
     val city: String,
     val state: String,
     val postcode: String
