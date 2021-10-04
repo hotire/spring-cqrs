@@ -4,7 +4,7 @@ import org.mapstruct.Mapper
 import org.mapstruct.factory.Mappers
 
 @Mapper
-interface UserMapper {
+interface UserMapper : ContactMapper, AddressMapper {
 
     companion object {
         val INSTANCE: UserMapper = Mappers.getMapper(UserMapper::class.java)
