@@ -9,10 +9,10 @@ interface UserRepository {
 
 interface UserEntityRepository : JpaRepository<UserEntity, Long>, UserRepository {
     override fun createUser(user: User): User {
-        return UserMapper.INSTNACE.toDomain(save(UserMapper.INSTNACE.toJpaEntity(user)))
+        return UserMapper.INSTANCE.toDomain(save(UserMapper.INSTANCE.toJpaEntity(user)))
     }
 
     override fun updateUser(user: User): User {
-        return UserMapper.INSTNACE.toDomain(save(UserMapper.INSTNACE.toJpaEntity(user)))
+        return UserMapper.INSTANCE.toDomain(save(UserMapper.INSTANCE.toJpaEntity(user)))
     }
 }

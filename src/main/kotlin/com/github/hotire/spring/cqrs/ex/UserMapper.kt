@@ -7,7 +7,7 @@ import org.mapstruct.factory.Mappers
 interface UserMapper {
 
     companion object {
-        val INSTNACE = Mappers.getMapper(UserMapper::class.java)
+        val INSTANCE: UserMapper = Mappers.getMapper(UserMapper::class.java)
     }
 
     fun toDomain(userEntity: UserEntity): User
